@@ -7,7 +7,7 @@ export default async function Home() {
   const topRated = await moviedb.movieNowPlaying()
   const showcase = await moviedb.listInfo(8275882)
   const showcaseMovie = showcase.items[Math.floor(Math.random() * showcase.items.length)]
-
+  
   return (
     <div className="-mt-56">
       <div className="relative">
