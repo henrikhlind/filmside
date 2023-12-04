@@ -34,7 +34,7 @@ export default async function Home() {
       <h1 className="text-2xl font-bold mx-8 my-4">IMDb Top 250</h1>
       <div className="grid grid-rows-3 lg:grid-rows-2  grid-flow-col gap-4 mx-6 mt-4">
         {topRated.items.slice(0, 6).map((movie: { id: Key; backdrop_path: string; title: string }) => (
-          <div className="flex flex-col group">
+          <div className="flex flex-col group" key={movie.id}>
             <Link className='relative w-full aspect-video' href={'movies/' + movie.id} key={movie.id} prefetch={false}>
               <Image className='rounded-xl object-cover group-hover:opacity-60 transition' src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path} alt={movie.title} width={1920} height={1080} loading='lazy' />
               <div className="absolute top-3/4 w-full h-full text-center flex flex-col items-center overflow-hidden">
