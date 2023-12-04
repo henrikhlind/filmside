@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .text-shadow {
-    text-shadow: 0 0 20px rgb(0, 0, 0, 0.6);
-    }
+    text-shadow: 0 0 20px rgb(0, 0, 0, 0.5);
+}
+    
+.providers:hover .provider:not(:hover) {
+    opacity: 0.3;
+}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "colorthief": "^2.4.0",
     "moviedb-promise": "^4.0.3",
     "next": "13.5.6",
     "react": "^18",
