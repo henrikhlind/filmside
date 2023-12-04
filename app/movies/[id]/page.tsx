@@ -70,7 +70,7 @@ const MoviePage = async ({ params }: { params: any }) => {
                                 <div className="">
                                     <p className='text-xl font-semibold'>Streaming</p>
                                     <div className="flex flex-row justify-center providers">
-                                        {providers.results.NO.flatrate.map((provider) => (
+                                        {providers.results.NO.flatrate.map((provider: { provider_name: string; provider_id: Key; logo_path: string }) => (
                                             <Link href={providerUrls[provider.provider_name]} target='_blank' key={provider.provider_id}>
                                                 <Image className='w-6 md:w-9 m-1 rounded-lg provider transition-opacity' src={'https://image.tmdb.org/t/p/original' + provider.logo_path} alt="" width={1920} height={1080} loading='lazy' />
                                             </Link>

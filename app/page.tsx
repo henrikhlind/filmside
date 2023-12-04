@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Key, ReactElement, JSXElementConstructor, ReactNode, PromiseLikeOfReactNode } from 'react'
 
 const { MovieDb } = require('moviedb-promise')
@@ -15,7 +16,7 @@ export default async function Home() {
   return (
     <div className="-mt-20">
       <div className="relative">
-        <img className='w-screen h-[90vh] object-cover object-top' src={'https://image.tmdb.org/t/p/original/' + showcaseMovie.backdrop_path}/>
+        <Image className='w-screen h-[90vh] object-cover object-top' src={'https://image.tmdb.org/t/p/original/' + showcaseMovie.backdrop_path} alt={showcaseMovie.title} width={1920} height={1080} loading='lazy' />
         <div className="absolute h-[90vh] inset-0 bg-gradient-to-t from-white dark:from-stone-950 via-transparent"></div>
         <div className="absolute bottom-10 w-96 text-center left-1/2 -translate-x-1/2">
           <h1 className='text-5xl font-bold dark:text-shadow'>{showcaseMovie.title}</h1>
@@ -35,7 +36,7 @@ export default async function Home() {
         {topRated.items.slice(0, 6).map((movie: { id: Key; backdrop_path: string; title: string }) => (
           <div className="flex flex-col group">
             <Link className='relative w-full aspect-video' href={'movies/' + movie.id} key={movie.id} prefetch={false}>
-              <img className='rounded-xl object-cover group-hover:opacity-60 transition' src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path} alt={movie.title} />
+              <Image className='rounded-xl object-cover group-hover:opacity-60 transition' src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path} alt={movie.title} width={1920} height={1080} loading='lazy' />
               <div className="absolute top-3/4 w-full h-full text-center flex flex-col items-center overflow-hidden">
                 <h1 className='text-l md:text-2xl font-bold dark:text-shadow transition'>{movie.title}</h1>
               </div>
