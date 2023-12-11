@@ -21,9 +21,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [modalState, setModalState] = useState(false); // State to control modal visibility
-  const [query, setQuery] = useState(''); // State to store search query
-  const router = useRouter(); // useRouter for redirection
+  const [modalState, setModalState] = useState(false);
+  const [query, setQuery] = useState('');
+  const router = useRouter();
 
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -72,10 +72,11 @@ export default function RootLayout({
               <form onSubmit={handleSearchSubmit}>
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder="Søk..."
                   className="p-2 w-44 md:w-96 dark:text-slate-50 focus:outline-none bg-transparent"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
+                  autoFocus
                 />
               </form>
             </div>

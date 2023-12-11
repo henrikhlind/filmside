@@ -68,6 +68,7 @@ export default async function MoviePage ({ params }: { params: any }) {
                         {recommendations.results
                           .filter((movie: { vote_count: number; backdrop_path: null }) => movie.vote_count >= 10 && movie.backdrop_path !== null)
                           .sort((a: { vote_average: number }, b: { vote_average: number }) => b.vote_average - a.vote_average)
+                          .slice(0, 6)
                           .map((movie: { id: Key; backdrop_path: string; title: string }) => (
                             <div className="flex flex-col group snap-end" key={movie.id}>
                                 <Link className='relative h-72 aspect-video' href={'' + movie.id} prefetch={false}>
